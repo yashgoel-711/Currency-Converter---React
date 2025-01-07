@@ -12,14 +12,25 @@ defineElement(lottie.loadAnimation);
   const [toCurrency, setToCurrency] = useState("INR")
   const conversionData = currencyInfo(fromCurrency);
 
+
   const [convertedAmount, setConvertedAmount] = useState(0)
   const [amount, setAmount] = useState(1)
 
   
   
   const options = Object.keys(conversionData)
-  const convert = ()=>{    
-    setConvertedAmount(amount * Number(conversionData[toCurrency].value))    
+
+  // useEffect(() => convert 
+  // , [toCurrency,amount])
+  
+
+  const convert = ()=>{  
+    if(amount){
+      setConvertedAmount(amount * Number(conversionData[toCurrency].value))    
+    }  
+    else(
+      setConvertedAmount(1 * Number(conversionData[toCurrency].value))    
+    )
   }
 
   const swap = ()=>{

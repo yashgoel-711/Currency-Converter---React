@@ -4,7 +4,7 @@
 import { useState,useEffect } from "react"
 
 
-const currencyInfo = (fromCurrency) => {
+const currencyInfo = (fromCurrency ) => {
     const [conversionData, setconversionData] = useState({})
    
     useEffect(() => {
