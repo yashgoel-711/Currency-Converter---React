@@ -32,9 +32,9 @@ defineElement(lottie.loadAnimation);
 
   return (
     <>
-    <div className='h-screen w-screen bg-[url("./src/assets/bg.jpg")] bg-cover bg-no-repeat'>
+    <div className='h-screen w-screen overflow-hidden bg-[url("./src/assets/bg.jpg")] bg-cover bg-no-repeat'>
     <div><h1 className='text-[100px] text-center text-[#fdfdfe]' style={{textShadow : "0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3, 0px 0px 20px #b393d3"}}>CURRENCY CONVERTER</h1></div>
-    <div className='flex justify-center items-center h-full'>
+    <div className='flex justify-center items-center h-[70vh]'>
       <div className='bg-[#ffffffa6] p-10 px-16 gap-5 min-w-[500px] min-h-[300px] flex flex-col items-center justify-center rounded-3xl outline-1 outline outline-rose-400' style={{boxShadow : "0px 0px 18px pink"}} >
         <form className='flex flex-col items-center justify-center gap-5' onSubmit={(e) => { e.preventDefault() ; convert() }} >
 
