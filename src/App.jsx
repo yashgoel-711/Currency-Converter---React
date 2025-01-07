@@ -23,7 +23,10 @@ defineElement(lottie.loadAnimation);
   }
 
   const swap = ()=>{
-    
+    setFromCurrency(toCurrency)
+    setToCurrency(fromCurrency)
+    setAmount(convertedAmount)
+    setConvertedAmount(amount)
   }
   
 
@@ -35,7 +38,7 @@ defineElement(lottie.loadAnimation);
         <form className='flex flex-col items-center justify-center gap-5' onSubmit={(e) => { e.preventDefault() ; convert() }} >
 
         <InputBox  currencyOptions={options} label={"From"} onCurrencyChange={(e)=>{setFromCurrency(e.target.value)}} selectedCurrency={fromCurrency} onAmountChange={(e)=>{setAmount(e.target.value)}} amount={amount}/>
-        <div onClick={()=>{swap}} className='rotate-[90deg] bg-white pt-1 px-1 rounded-md'> <lord-icon src="/src/assets/swap.json" trigger={"hover"} ></lord-icon></div>
+        <div onClick={swap} className='rotate-[90deg] bg-white pt-1 px-1 rounded-md'> <lord-icon src="/src/assets/swap.json" trigger={"hover"} ></lord-icon></div>
         <InputBox  currencyOptions={options} label ={"To"} onCurrencyChange={(e)=>{setToCurrency(e.target.value)}} selectedCurrency={toCurrency} isDisabled={true} amount={convertedAmount} />
         <button className='bg-green-500 w-full py-3 text-xl  rounded-md hover:bg-yellow-400' type='submit'>Convert {fromCurrency} to {toCurrency}</button>
         </form>
