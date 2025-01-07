@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react'
 import InputBox from './components/InputBox'
 import currencyInfo from './currencyInfo'
+import lottie from "lottie-web";
+import { defineElement } from "@lordicon/element";
 
+// define "lord-icon" custom element with default properties
+defineElement(lottie.loadAnimation);
   function App() {
 
   const [fromCurrency, setFromCurrency] = useState("USD")
@@ -14,15 +18,14 @@ import currencyInfo from './currencyInfo'
   
   
   const options = Object.keys(conversionData)
-  const convert = ()=>{
-    
-    setConvertedAmount(amount * Number(conversionData[toCurrency].value))
+  const convert = ()=>{    
+    setConvertedAmount(amount * Number(conversionData[toCurrency].value))    
+  }
+
+  const swap = ()=>{
     
   }
-  // useEffect(() => {
-  // convert()
   
-  // }, [toCurrency])
 
   return (
     <>
@@ -32,6 +35,7 @@ import currencyInfo from './currencyInfo'
         <form className='flex flex-col items-center justify-center gap-5' onSubmit={(e) => { e.preventDefault() ; convert() }} >
 
         <InputBox  currencyOptions={options} label={"From"} onCurrencyChange={(e)=>{setFromCurrency(e.target.value)}} selectedCurrency={fromCurrency} onAmountChange={(e)=>{setAmount(e.target.value)}} amount={amount}/>
+        <div onClick={()=>{swap}} className='rotate-[90deg] bg-white pt-1 px-1 rounded-md'> <lord-icon src="/src/assets/swap.json" trigger={"hover"} ></lord-icon></div>
         <InputBox  currencyOptions={options} label ={"To"} onCurrencyChange={(e)=>{setToCurrency(e.target.value)}} selectedCurrency={toCurrency} isDisabled={true} amount={convertedAmount} />
         <button className='bg-green-500 w-full py-3 text-xl  rounded-md hover:bg-yellow-400' type='submit'>Convert {fromCurrency} to {toCurrency}</button>
         </form>
