@@ -9,7 +9,7 @@ Currently, two official plugins are available:
 
 
 # Currency Converter 
-## Mini-Project of React
+## Mini-Project of React (by Yash Goel)
 It is a web application that allows users to convert amounts from one currency to another. It fetches real-time exchange rates from an API and updates the results dynamically.
 
 
@@ -36,3 +36,4 @@ It is a web application that allows users to convert amounts from one currency t
 
 ## UI : 
 ![FInal Product UI!](./Final-Product-UI.png )
+
